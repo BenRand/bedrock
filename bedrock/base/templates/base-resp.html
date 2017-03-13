@@ -92,6 +92,9 @@
       <div id="wrapper">
 
       {% block site_header %}
+        {% if LANG.startswith('en-') %}
+          {% include 'includes/global-nav.html' %}
+        {% else %}
         <header id="masthead">
 
         {% block tabzilla_tab %}
@@ -130,6 +133,7 @@
         {% block site_header_share %}{% endblock %}
 
         </header>
+        {% endif %}
       {% endblock %}
 
       {% block messages %}
